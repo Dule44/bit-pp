@@ -250,19 +250,17 @@ for (var i = 0; i < a3.length; i++) {
 //2.
 
 var arr3 = [-3, 11, 5, 3.4, -8];
+var b = [];
 
-// arr3.forEach(function (item) {
-//   if (item > -1) {
-//     console.log(item * 2);
-//   }
-// });
-
-for (var i = 0; i <= arr3.length; i++) {
-  if (arr3[i] > 0) {
-    arr3[i] *= 2;
-    console.log(arr3);
-  }
+for (i = 0; i < arr3.length; i++) {
+    var el = arr3[i];
+    if (el > 0) {
+        b.push(el * 2);
+    } else {
+        b.push(el);
+    }
 }
+console.log(b);
 
 //3.
 
