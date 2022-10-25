@@ -266,13 +266,35 @@ for (var i = 0; i <= arr3.length; i++) {
 
 //3.
 
-var arr4 = [4, 2, 2, -1, 6];
+var a = [4, 2, 2, -1, 6];
+var small = a[0];
 
-for (var i = 0; i <= arr4.length; i++) {
-  if (arr4[i] < arr4[i + 1]) {
-    console.log(arr4[i], i);
-  }
+for (i = 0; i < a.length; i++) {
+    if (a[i] < small) {
+        small = a[i]
+        index = i;
+    }
 }
+console.log(small,index);
+//4.
+
+var a = [4, 2, 2, -1, 6];
+var b = a[0];
+
+for (i = 0; i < a.length; i++) {
+    if (a[i] < b) {
+        b = a[i]
+        var a = delete a[i];
+        for (i = 0; i < a.length; i++) {
+            if (a[i] < b) {
+                b = a[i]
+                break;
+            }
+        }
+    }
+}
+
+console.log(b);
 
 
 
