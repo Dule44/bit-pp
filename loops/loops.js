@@ -1,147 +1,22 @@
 
 
-//Exercises
-
-//.1
-
-// for (var num = 1; num <= 10; num++) {
-//   var sumn = 0;
-//   sumn += num;
-//   console.log(sumn);
-// }
-
-var sumn = 0;
-for (var num = 1; num <= 10; num++){
-  sumn += num;
-console.log(sumn);
-}
-
-
-
-//2.
-
-// var n = 2;
-
-// var cube;
-
-// var cube = n * n * n;
-
-// console.log("Cube of a Number = " + cube);
-
-for (var n = 2; n <= 2; n++) {
-  var multi = 1;
-  multi *=  n * n * n;
-  console.log(multi);
-}
-
-//   var sumn = 0;
-
-//   for (var i = 2; i <= 2; i++) {
-//     sumn += Math.pow(i, 3);
-//     console.log(sumn);
-//   }
-
-//3.
-
-const number = 5;
-
-if (number < 0) {
-  console.log("Error! Factorial for negative number does not exist.");
-} else if (number === 0) {
-  console.log(`The factorial of ${number} is 1.`);
-} else {
-  var fact = 1;
-  for (i = 1; i <= number; i++) {
-    fact *= i;
-  }
-  console.log(`The factorial of ${number} is ${fact}.`);
-}
-
-//4.
-
-for (var i = 2; i <= 10; i++) {
-  if (i % 2 == 0) {
-    console.log("The even numbers are " + i);
-  }
-}
-
-//5.
-
-var value = 232;
-var sumn = 0;
-while (value) {
-  sumn += value % 10;
-  // console.log(sumn);
-  value = Math.floor(value / 10);
-  // console.log(value);
-}
-
-// console.log(sumn);
-console.log("Sum of digits in number 232 is " + sumn);
-
-
-//6.
-// var word = "Eclip542se";
-// var numb = "542";
-// var letter_count = 0;
-
-// for (var i = 0; i < word.length; i++) {
-  
-//    if (word[i] == 1 ||
-//     word[i] == 2 ||
-//     word[i] == 3 ||
-//     word[i] == 4 ||
-//     word[i] == 5 ||
-//     word[i] == 6 ||
-//     word[i] == 7 ||
-//     word[i] == 8 ||
-//     word[i] == 9 ||
-//     word[i] == 0 ) {
-//     continue;
-//     } else {
-//     letter_count += 1;
-//     }
-// }
-// console.log(`There is ${letter_count}  letters in this word`);
-
-// for (var i = 0; i < word.length; i++) {
-//   if (word[i] == 4) {
-//     continue;
-//   } else {
-//     letter_count += 1;
-//   }
-// }
-// console.log(`There is ${letter_count}  letters in this word`);
-
-//7.
-
-var array = [1, 3, 32, "$", "g", "h", "t", "s", "c", 66, 23, "h2"];
-for( var i = 0; i <= array.length; i++){
-  if (array[i] === "c"){
-    console.log(i);
-  }
-}
-
-//-------------------------------------------------------------
-for (var x = 0; x <= 10; x++) {
-  console.log(x * x);
-}
 
 //Exercises Loops
 //1.
+// Write a for loop that will iterate from 0 to 15. For each iteration, it will check if the current
+// number is odd or even, and display a message to the screen.
 
-for (var x = 0; x <= 15; x++) {
-  if (x === 0) {
-    console.log(x + " is even");
-  } else if (x % 2 === 0) {
-    console.log(x + " is even");
+
+for (var i = 0; i <= 15; i++) {
+  if (i % 2 == 0) {
+      console.log('Even number', i)
   } else {
-    console.log(x + " is odd");
+      console.log('Odd number', i);
   }
 }
 
 //2.
-
+// Write a program to sum the multiples of 3 and 5 under 1000.
 // var sum = 0;
 // for (var x = 0; x < 1000; x++) {
 //   if (x % 3 === 0 || x % 5 === 0) {
@@ -151,7 +26,7 @@ for (var x = 0; x <= 15; x++) {
 // console.log(sum);
 
 //3.
-
+// Write a program to compute the sum and product of an array of integers.
 var array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 var s = 0;
 var p = 1;
@@ -163,14 +38,28 @@ for (i = 0; i < array.length; i += 1) {
 console.log("Sum : " + s + " Product :  " + p);
 
 //4.
+// Write a program which prints the elements of the following array as a single string.
+// var x = ["1", "A", "B", "c,", "r", true, NaN, undefined];
+// for (var el of x) {
+//   console.log(`"${el}"`);
+// }
 
-var x = ["1", "A", "B", "c,", "r", true, NaN, undefined];
-for (var el of x) {
-  console.log(`"${el}"`);
+var x = ['1', 'A', 'B', "c", "r", true, NaN, undefined];
+var output = '';
+
+for (var i = 0; i < x.length; i++) {
+   var element = x[i];
+   output += element;
 }
 
-//5.
+console.log(x.length);
+console.log(output);
 
+
+
+
+//5.
+// Write a program that prints the elements of the following array.
 var a = [
   [1, 2, 1, 24],
   [8, 11, 9, 4],
@@ -185,6 +74,7 @@ for (var i in a) {
 }
 
 //6.
+//Write a program that outputs the sum of squares of the first 20 numbers.
 var sum = 0;
 for (let i = 1; i <= 20; i++) {
   sum += i * i;
@@ -192,7 +82,8 @@ for (let i = 1; i <= 20; i++) {
 }
 
 //7.
-
+// Write a program that computes average marks of the following students. Then use this
+// average to determine the corresponding grade.
 var students = [
   ["David", 80],
   ["Marko", 77],
@@ -223,6 +114,11 @@ for (var i = 0; i < students.length; i++) {
 console.log("Average grade: " + avgmarks / students.length);
 
 //8.
+// Write a program that uses console.log to print all the numbers from 1 to 100, with two
+// exceptions. For numbers divisible by 3, print &quot;Fizz&quot; instead of the number, and for numbers
+// divisible by 5 (and not 3), print &quot;Buzz&quot; instead. When you have that working, modify your
+// program to print &quot;FizzBuzz&quot;, for numbers that are divisible by both 3 and 5 (and still print
+// &quot;Fizz&quot; or &quot;Buzz&quot; for numbers divisible by only one of those).
 
 for (var i = 1; i < 100; i++) {
   if (i % 15 == 0) console.log("FizzBuzz");
@@ -233,149 +129,4 @@ for (var i = 1; i < 100; i++) {
 
 //----------------------------------------------------
 
-//Exercises Loops2
-//1.
-var e = 3;
-var a3 = [5, -4.2, 3, 7];
 
-for (var i = 0; i < a3.length; i++) {
-  var num = a3[i];
-  if (num == e) {
-    console.log("yes");
-  } else {
-    console.log("no");
-  }
-}
-
-//2.
-
-var arr3 = [-3, 11, 5, 3.4, -8];
-var b = [];
-
-for (i = 0; i < arr3.length; i++) {
-    var el = arr3[i];
-    if (el > 0) {
-        b.push(el * 2);
-    } else {
-        b.push(el);
-    }
-}
-console.log(b);
-
-//3.
-
-var a = [4, 2, 2, -1, 6];
-var small = a[0];
-
-for (i = 0; i < a.length; i++) {
-    if (a[i] < small) {
-        small = a[i]
-        index = i;
-    }
-}
-console.log(small,index);
-//4.
-
-var a = [4, 2, 2, -1, 6];
-var b = a[0];
-
-for (i = 0; i < a.length; i++) {
-    if (a[i] < b) {
-        b = a[i]
-        var a = delete a[i];
-        for (i = 0; i < a.length; i++) {
-            if (a[i] < b) {
-                b = a[i]
-                break;
-            }
-        }
-    }
-}
-
-console.log(b);
-
-
-
-
-
-//5.
-var arr5 = [3, 11, -5, -3, 2];
-
-var positive_sum = 0;
-
-for (var i = 0; i < 5; i++) {
-  if (arr5[i] > 0) {
-    positive_sum += arr5[i];
-  }
-}
-
-console.log(positive_sum);
-
-//6.
-
-var arr6 = [2, 4, -2, 7, -2, 4, 2];
-
-for (let i = 0; i < arr6.length; i++) {
-  if (arr6[i] != arr6[i]) {
-    console.log("The array is no symmetric.");
-  } else {
-    console.log("The array is symmetric.");
-  }
-}
-
-//7.
-
-var arrOne = [4, 5, 6, 2];
-var arrTwo = [3, 8, 11, 9];
-
-// var combined = [];
-
-// for (var i = 0; i < arrOne.length; i++) {
-//   for (var j = 0; j < arrTwo.length; i++) {
-//     combined.push(arrOne[i] + arrTwo[i]);
-//   }
-// }
-for (var i = 0; i < arrTwo.length; i++) {
-  arrOne.push(arrTwo[i]);
-}
-console.log(arrOne);
-
-
-//8.
-var arr = [
-  [4, 5, 6, 2],
-  [3, 8, 11, 9],
-];
-var arrConc = [];
-
-for (var i = 0; i < arr.length; i++) {
-  arrConc = arrConc.concat(arr[i]);
-}
-console.log(arrConc);
-
-//9.
-
-var a = [4, 6, 2, 8, 2, 2];
-var e = 2;
-var newArray = [];
-
-for (let i = 0; i < a.length; i++) {
-  if (a[i] !== e) {
-    newArray.push(a[i]);
-  }
-}
-console.log(newArray);
-
-//10.
-var e = 78;
-var newArr = [];
-var pos = 4;
-var a = [2, -2, 33, 12, 5, 8];
-
-for (i = 0; i < a.length; i++) {
-  if (i < pos - 1) newArr[i] = a[i];
-  else if (i == pos - 1) newArr[i] = e;
-  else newArr[i] = a[i];
-}
-
-console.log(newArr);
