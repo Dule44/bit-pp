@@ -25,15 +25,7 @@ for (var i = 0; i < a3.length; i++) {
 var arr3 = [-3, 11, 5, 3.4, -8];
 var b = [];
 
-for (i = 0; i < arr3.length; i++) {
-    var el = arr3[i];
-    if (el > 0) {
-        b.push(el * 2);
-    } else {
-        b.push(el);
-    }
-}
-console.log(b);
+
 
 // var array = [-3, 11, 5, 3.4, -8]
 // for (let index = 0; index < array.length; index++) {
