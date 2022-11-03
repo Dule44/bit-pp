@@ -115,7 +115,7 @@ symmetric([2, 4, -2, 7, -2, 4, 2]);
 
 //7.Write a program that intertwines two arrays. You can assume the arrays are of the same length.
 
-function interwines(a, b) {
+function intertwines(a, b) {
   var newArray = [];
   for (var i = 0; i < a.length; i++) {
     newArray.push(a[i], b[i]);
@@ -123,7 +123,7 @@ function interwines(a, b) {
   return newArray;
 }
 
-console.log(interwines([4, 5, 6, 2], [3, 8, 11, 9]));
+console.log(intertwines([4, 5, 6, 2], [3, 8, 11, 9]));
 
 //8.Write a program that concatenates two arrays.
 
