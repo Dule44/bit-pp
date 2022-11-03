@@ -59,7 +59,23 @@ function secondSmallNumber(arr) {
   return console.log(secondMin);
 }
 
-secondSmallNumber([4, 2, 2 - 1, 6]);
+// secondSmallNumber([4, 2, 2 - 1, 6]);
+
+
+// function smallestNumber(array) {
+//   var min = Infinity;
+//   var min2 = Infinity;
+//   for (var i = 0; i < array.length; i++) {
+//     if (min > array[i]) {
+//       min2 = min;
+//       min = array[i];
+//     } else if (min2 > array[i]) {
+//       min2 = array[i];
+//     }
+//   }
+//   return min2;
+// }
+// console.log(smallestNumber([4, 2, 2, -1, 6]));
 
 //5.Write a program that calculates the sum of positive elements in the array.
 
