@@ -152,17 +152,21 @@ console.log(delGivenEl([4, 6, 2, 8, 2, 2],2));
 //10.Write a program that inserts a given element e on the given position p in the array a. If the value of the position is greater than the array length, print the error message.
 
 
-function insertGivEl(a,e,p){
-    var newArr = [];
-    for (i = 0; i < a.length; i++) {
-        if (i < p ) newArr[i] = a[i];
-        else if (i == p ) newArr[i] = e;
-        else newArr[i] = a[i];
-      }
-     return newArr; 
+function insertEl(a, e, p) {
+  var newArr = [];
+  for (var i = 0; i < a.length; i++) {
+    if (i === p) {
+      newArr[newArr.length] = e;
+      newArr[newArr.length] = a[i];
+    } else {
+      newArr[newArr.length] = a[i];
+    }
+  }
+  return newArr;
 }
 
-console.log(insertGivEl([2, -2, 33, 12, 5, 8],78,3))
+console.log(insertEl([2, -2, 33, 12, 5, 8], 78, 3));
+
 
 
 
