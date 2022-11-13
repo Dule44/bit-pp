@@ -208,7 +208,7 @@ firstMiddleLast([])
 
 
 // Exercise 12 - Write a function to find the average of N elements. Make the function flexible to receive dynamic number or parameters.
-function foo() {
+function average() {
   for (var i = 0; i < arguments.length; i++) {
     console.log(arguments[i]);
   }
