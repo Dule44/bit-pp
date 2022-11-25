@@ -22,18 +22,13 @@
   // Output: 20
   
   (function rectangle(a, b) {
-    let surface = a * b;
+    var surface = a * b;
     console.log(
-      "Surface area of the given rectangle with sides" +
-        " " +
+      "surface area of the given rectangle with sides " +
         a +
-        " " +
-        "and" +
-        " " +
+        " and " +
         b +
-        " " +
-        "is" +
-        " " +
+        " is " +
         surface
     );
   })(4, 5);
