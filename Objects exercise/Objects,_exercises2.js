@@ -40,16 +40,16 @@ function getTotalPrice(groceries) {
     }
   ];
   
-  function mostExpensive(jewelry) {
+  function mostExpensive(input) {
     let expensive = 0;
     var result;
     
-    for(let i = 0; i < jewelry.length; i++) {
+    for(let i = 0; i < input.length; i++) {
     
-      if(jewelry[i].price > expensive) {
+      if(input[i].price > expensive) {
       
-        expensive = jewelry[i].price;
-        result = jewelry[i].name;
+        expensive = input[i].price;
+        result = input[i].name;
       }
     }
       return result;
@@ -241,14 +241,14 @@ function average(arr) {
     return (sum / arr.length);
 }
 
-function theBestStudent(students) {
+function theBestStudent(student) {
     var averageGrade = 0;
-    var bestStudent = students[0].name;
-    for (let i = 0; i < students.length; i++) {
-        var x = average(students[i].grades);
+    var bestStudent = student[0].name;
+    for (let i = 0; i < student.length; i++) {
+        var x = average(student[i].grades);
         if (x > averageGrade) {
             averageGrade = x;
-            bestStudent = students[i].name;
+            bestStudent = student[i].name;
         }
     }
     return bestStudent;
