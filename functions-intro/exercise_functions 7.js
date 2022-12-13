@@ -34,12 +34,11 @@ calculateDogAge(5, 6);
 // Call that function three times, passing in different values each time.
 // Bonus: Accept floating point values for amount per day, and round the result to a round number.
 function calculateSupply(age, amount) {
-    let zaokruzi = Math.floor(amount);
-    console.log(zaokruzi);
+    let circleNum = Math.floor(amount);
     const maxAge = 75;
-    let ostatakZivota = maxAge - age;
-    let namirnice = ostatakZivota * 365 * zaokruzi;
-    console.log("You will need " + namirnice + " to last you until the ripe old age of " + maxAge);
+    let restLife = maxAge - age;
+    let groceries = restLife * 365 * circleNum;
+    console.log("You will need " + groceries + " to last you until the ripe old age of " + maxAge);
 }
 
 calculateSupply(37, 100);
@@ -140,14 +139,14 @@ function isPrime(a) {
 
 function primeNumbers(input) {
     let broj = 0;
-    let niz = [];
+    let arr = [];
     for (j = 2; j <= input; j++) {
         if (isPrime(j)) {
             broj++;
-            niz.push(j);
+            arr.push(j);
         }
     }
-    return console.log(broj + ' // ' + niz);
+    return console.log(broj + ' // ' + arr);
 }
 
 primeNumbers(10);
@@ -161,16 +160,16 @@ primeNumbers(30);
 // diamondArrays(2) ➞ [1, 2, 2, 1]
 // diamondArrays(5) ➞ [1, 2, 2, 3, 3, 3, 4, 4, 4, 4, 5, 5, 5, 5, 5, 4, 4, 4, 4, 3, 3, 3, 2, 2, 1]
 function diamondArrays(input) {
-    let niz = [];
+    let arr = [];
 
     for (let i = 1; i <= input; i++) {
-        niz.push(input);
+        arr.push(input);
     }
 
     for (let j = input-1; j >= 1; j--) {
         for (let x = 1; x <= j; x++) {
-            niz.push(j);
-            niz.unshift(j);
+            arr.push(j);
+            arr.unshift(j);
         }
     }
 
