@@ -173,7 +173,7 @@ function diamondArrays(input) {
         }
     }
 
-    return niz;
+    return arr;
 }
 
 console.log(diamondArrays(1));
