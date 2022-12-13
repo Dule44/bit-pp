@@ -132,31 +132,16 @@ function getTotalPrice(groceries) {
   // Exercise 5 - Create a function that converts color in RGB format to Hex format.
   // Examples:
   // rgbToHex({red: 0, green: 128, blue: 192}) ➞ "#0080c0"
-  var a = {red: 0, green: 128, blue: 192};
-  var b = {red: 79, green: 113, blue: 12};
-  var c = {red: 220, green: 32, blue: 0};
-  
-  function rgbToHex(input) {
-      var hexR = input.red.toString(16);
-      var hexG = input.green.toString(16);
-      var hexB = input.blue.toString(16);
-      if (hexR.length == 1) {
-          hexR = '0' + hexR;
-      }
-      if (hexG.length == 1) {
-          hexG = '0' + hexG;
-      }
-      if (hexB.length == 1) {
-          hexB = '0' + hexB;
-      }
-  
-      return console.log(`${input} : #${hexR}${hexG}${hexB}`);
-  }
-  
-  
-  rgbToHex(a);
-  rgbToHex(b);
-  rgbToHex(c);
+  const rgbToHex = function (rgb) {
+  const { red, green, blue } = rgb;
+
+  const hex = `#${red.toString(16).padStart(2, "0")}${green
+    .toString(16)
+    .padStart(2, "0")}${blue.toString(16).padStart(2, "0")}`;
+  return hex;
+};
+console.log(rgbToHex({ red: 0, green: 128, blue: 192 }));
+
 
 // Exercise 6 - Create a function that takes an amount of monetary change (e.g. 47 cents) and breaks down the most efficient way that change can be made using USD quarters, dimes, nickels and pennies. Your function should return an object.
 // COIN     VALUE
