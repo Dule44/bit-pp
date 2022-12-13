@@ -168,32 +168,27 @@ function getTotalPrice(groceries) {
 // makeChange(47) ➞ { "q": 1, "d": 2, "n": 0, "p": 2 }
 // makeChange(24) ➞ { "q": 0, "d": 2, "n": 0, "p": 4 }
 // makeChange(92) ➞ { "q": 3, "d": 1, "n": 1, "p": 2 }
-function makeChange(input) {
-    var a = new Object();
+const makeChange = function (change) {
+  const result = { q: 0, d: 0, n: 0, p: 0 };
 
-    var q = input / 25;
-    var qInt = Math.floor(q);
-    
-    var d = (input % 25) / 10;
-    var dInt = Math.floor(d);
-    
-    var n = ((input % 25) % 10) / 5;
-    var nInt = Math.floor(n);
-    
-    var p = (((input % 25) % 10) % 5);
-    
-    a["q"] = qInt;
-    a["d"] = dInt;
-    a["n"] = nInt;
-    a["p"] = p;
-
-    return a;
-}
-
+  while (change > 0) {
+    if (change >= 25) {
+      change -= 25;
+      result.q++;
+    } else if (change >= 10) {
+      change -= 10;
+      result.d++;
+    } else if (change >= 5) {
+      change -= 5;
+      result.n++;
+    } else if (change >= 1) {
+      change -= 1;
+      result.p++;
+    }
+  }
+  return result;
+};
 console.log(makeChange(47));
-console.log(makeChange(24));
-console.log(makeChange(92));
-
 
 // Exercise 7 - Create a function that takes an array of objects like { name: "John", notes: [3, 5, 4]} and returns an array of objects like { name: "John", avgNote: 4 }. If student has no notes (an empty array) then let's assume avgNote: 0.
 //    Examples:
