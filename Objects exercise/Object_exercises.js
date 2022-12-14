@@ -61,14 +61,14 @@ function project(des, lan, repository, stat) {
   //	Add a method that changes the type of cuisine to the given value.
   //	Add a method that delete a given ingredient from the list of ingredients.
   
-  function Pizazarecipe(name, cuis, complexity, ingr, time, instructions) {
+  function Recipe(name, cuis, complexity, ingr, time, instructions) {
     this.name = name;
     this.cuisine = cuis;
     this.complexity = complexity;
     this.ingredients = ingr;
     this.time = time;
     (this.instructions = instructions),
-      (this.ingred = function () {
+      (this.ingred = function() {
         return ingr.toString();
       });
     this.preparation = function () {
