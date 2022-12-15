@@ -131,15 +131,29 @@ console.log(
 // Exercise 5 - Create a function that converts color in RGB format to Hex format.
 // Examples:
 // rgbToHex({red: 0, green: 128, blue: 192}) ➞ "#0080c0"
-const rgbToHex = function (rgb) {
-const { red, green, blue } = rgb;
 
-const hex = `#${red.toString(16).padStart(2, "0")}${green
-  .toString(16)
-  .padStart(2, "0")}${blue.toString(16).padStart(2, "0")}`;
-return hex;
-};
-console.log(rgbToHex({ red: 0, green: 128, blue: 192 }));
+function rgbToHex({ red, green, blue }) {
+  let r = red.toString(16);
+  let g = green.toString(16);
+  let b = blue.toString(16);
+
+  return `#${r}${g}${b}`;
+}
+
+let rgb = { red: 0, green: 128, blue: 192 };
+let hex = rgbToHex(rgb);
+console.log(hex);
+
+
+// const rgbToHex = function (rgb) {
+// const { red, green, blue } = rgb;
+
+// const hex = `#${red.toString(16).padStart(2, "0")}${green
+//   .toString(16)
+//   .padStart(2, "0")}${blue.toString(16).padStart(2, "0")}`;
+// return hex;
+// };
+// console.log(rgbToHex({ red: 0, green: 128, blue: 192 }));
 
 
 // Exercise 6 - Create a function that takes an amount of monetary change (e.g. 47 cents) and breaks down the most efficient way that change can be made using USD quarters, dimes, nickels and pennies. Your function should return an object.
@@ -152,6 +166,8 @@ console.log(rgbToHex({ red: 0, green: 128, blue: 192 }));
 // makeChange(47) ➞ { "q": 1, "d": 2, "n": 0, "p": 2 }
 // makeChange(24) ➞ { "q": 0, "d": 2, "n": 0, "p": 4 }
 // makeChange(92) ➞ { "q": 3, "d": 1, "n": 1, "p": 2 }
+
+
 var makeChange = function (change) {
 var result = { q: 0, d: 0, n: 0, p: 0 };
 
@@ -174,9 +190,35 @@ return result;
 };
 console.log(makeChange(47));
 
+
+// function makeChange(amount) {
+//   let result = { "q": 0, "d": 0, "n": 0, "p": 0 };
+
+//   let q = Math.floor(amount / 25);
+//   result.q = q;
+//   amount -= q * 25;
+
+//   let d = Math.floor(amount / 10);
+//   result.d = d;
+//   amount -= d * 10;
+
+//   let n = Math.floor(amount / 5);
+//   result.n = n;
+//   amount -= n * 5;
+
+//   result.p = amount;
+
+//   return result;
+// }
+
+// let change = makeChange(47);
+// console.log(change); // { "q": 1, "d": 2, "n": 0, "p": 2 }
+
 // Exercise 7 - Create a function that takes an array of objects like { name: "John", notes: [3, 5, 4]} and returns an array of objects like { name: "John", avgNote: 4 }. If student has no notes (an empty array) then let's assume avgNote: 0.
 //    Examples:
 //    [ { name: "John", notes: [3, 5, 4]} ] ➞ [ { name: "John", avgNote: 4 } ]
+
+
 function avgNotes(students) {
   var studentsWithAvg = [];
   var sum = [];
