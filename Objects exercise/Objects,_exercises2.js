@@ -4,18 +4,20 @@
 
 function getTotalPrice(groceries) {
   let total = 0;
-  for (let i = 0; i < groceries.length; i++){
-      total += groceries[i].price;
+  for (let i = 0; i < groceries.length; i++) {
+    total += groceries[i].price;
   }
   return total;
 }
 
-console.log(getTotalPrice([
-  { product: "Milk", quantity: 1, price: 1.50 },
-  { product: "Eggs", quantity: 12, price: 0.10 },
-  { product: "Bread", quantity: 2, price: 2.25 },
-  { product: "Cheese", quantity: 1, price: 4.75 }
-]));
+console.log(
+  getTotalPrice([
+    { product: "Milk", quantity: 1, price: 1.5 },
+    { product: "Eggs", quantity: 12, price: 0.1 },
+    { product: "Bread", quantity: 2, price: 2.25 },
+    { product: "Cheese", quantity: 1, price: 4.75 },
+  ])
+);
 
 // 2. You go to a jewelry shop and try to find the most expensive piece of jewelry. You write
 // down the name of each piece of jewelry and its price. Create a function that gets the
@@ -25,33 +27,29 @@ console.log(getTotalPrice([
 var jewelry = [
   {
     name: "Diamond Earings",
-    price: 980
-    
+    price: 980,
   },
   {
     name: "Gold watch",
-    price: 250
-    
+    price: 250,
   },
   {
     name: "Diamond Ring",
-    price: 1300
-  }
+    price: 1300,
+  },
 ];
 
 function mostExpensive(input) {
   let expensive = 0;
   var result;
-  
-  for(let i = 0; i < input.length; i++) {
-  
-    if(input[i].price > expensive) {
-    
+
+  for (let i = 0; i < input.length; i++) {
+    if (input[i].price > expensive) {
       expensive = input[i].price;
       result = input[i].name;
     }
   }
-    return result;
+  return result;
 }
 
 console.log(mostExpensive(jewelry));
@@ -61,17 +59,17 @@ console.log(mostExpensive(jewelry));
 // are stored in an array and those arrays are values.
 // Examples:
 
-function  mapLetters(str){
+function mapLetters(str) {
   var map = {};
-  for(let i = 0; i < str.length; i++){
-     if(map.hasOwnProperty(str[i])){
-        map[str[i]] = map[str[i]].concat(i);
-     }else{
-        map[str[i]] = [i];
-     };
-  };
+  for (let i = 0; i < str.length; i++) {
+    if (map.hasOwnProperty(str[i])) {
+      map[str[i]] = map[str[i]].concat(i);
+    } else {
+      map[str[i]] = [i];
+    }
+  }
   return map;
-};
+}
 console.log(mapLetters("dodo"));
 console.log(mapLetters("froggy"));
 console.log(mapLetters("grapes"));
@@ -88,7 +86,6 @@ console.log(mapLetters("grapes"));
 // 10}, { me: 9,  spouse: 10}]) ➞ "ME!"
 // determineWhoCursedTheMost([{ me: 10,spouse: 5 }, { me: 9,  spouse:
 // 44 }, { me: 10,    spouse: 55}]) ➞ "SPOUSE!"
-
 
 function determineWhoCursedTheMost(curses) {
   let scoreMe = 0;
@@ -144,6 +141,42 @@ let rgb = { red: 0, green: 128, blue: 192 };
 let hex = rgbToHex(rgb);
 console.log(hex);
 
+//Nikolino resenje 
+
+// function checkColor(color = 0) {
+//   return color < 0 || color > 255
+// }
+
+// function rgbToHex(color = {}) {
+//   if (!color || checkColor(color.red) || checkColor(color.green) || checkColor(color.blue)) {
+//       return 'INVALID'
+//   }
+
+//   var red = color.red.toString(16).padStart(2, '0');
+//   var green = color.green.toString(16).padStart(2, '0');
+//   var blue = color.blue.toString(16).padStart(2, '0');
+
+//   return `#${red}${green}${blue}`;
+// }
+
+// function hexToRGB(str = '') {
+//   if (!str || !str.startsWith('#') || str.length != 7) {
+//       return null;
+//   }
+
+//   var colorString = str.split('#')[1];
+//   var red = parseInt(colorString.substring(0, 2), 16);
+//   var green = parseInt(colorString.substring(2, 4), 16);
+//   var blue = parseInt(colorString.substring(4), 16);
+
+//   return { red, green, blue };
+// }
+
+// var hex = rgbToHex({ red: 0, green: 128, blue: 192 });
+// console.log(hex);
+// console.log(hexToRGB(hex));
+
+//
 
 // const rgbToHex = function (rgb) {
 // const { red, green, blue } = rgb;
@@ -154,7 +187,6 @@ console.log(hex);
 // return hex;
 // };
 // console.log(rgbToHex({ red: 0, green: 128, blue: 192 }));
-
 
 // Exercise 6 - Create a function that takes an amount of monetary change (e.g. 47 cents) and breaks down the most efficient way that change can be made using USD quarters, dimes, nickels and pennies. Your function should return an object.
 // COIN     VALUE
@@ -167,29 +199,27 @@ console.log(hex);
 // makeChange(24) ➞ { "q": 0, "d": 2, "n": 0, "p": 4 }
 // makeChange(92) ➞ { "q": 3, "d": 1, "n": 1, "p": 2 }
 
-
 var makeChange = function (change) {
-var result = { q: 0, d: 0, n: 0, p: 0 };
+  var result = { q: 0, d: 0, n: 0, p: 0 };
 
-while (change > 0) {
-  if (change >= 25) {
-    change -= 25;
-    result.q++;
-  } else if (change >= 10) {
-    change -= 10;
-    result.d++;
-  } else if (change >= 5) {
-    change -= 5;
-    result.n++;
-  } else if (change >= 1) {
-    change -= 1;
-    result.p++;
+  while (change > 0) {
+    if (change >= 25) {
+      change -= 25;
+      result.q++;
+    } else if (change >= 10) {
+      change -= 10;
+      result.d++;
+    } else if (change >= 5) {
+      change -= 5;
+      result.n++;
+    } else if (change >= 1) {
+      change -= 1;
+      result.p++;
+    }
   }
-}
-return result;
+  return result;
 };
 console.log(makeChange(47));
-
 
 // function makeChange(amount) {
 //   let result = { "q": 0, "d": 0, "n": 0, "p": 0 };
@@ -218,14 +248,12 @@ console.log(makeChange(47));
 //    Examples:
 //    [ { name: "John", notes: [3, 5, 4]} ] ➞ [ { name: "John", avgNote: 4 } ]
 
-
 function avgNotes(students) {
   var studentsWithAvg = [];
   var sum = [];
   var avg = [];
 
   for (let i = 0; i < students.length; i++) {
-
     // predefine sum at index with 0
     sum[i] = 0;
 
@@ -242,7 +270,7 @@ function avgNotes(students) {
   }
 
   return studentsWithAvg;
-};
+}
 console.log(
   avgNotes([
     { name: "John", notes: [3, 5, 4] },
@@ -251,37 +279,104 @@ console.log(
   ])
 );
 
-
 // Exercise 8 - Given an object with students and the grades that they made on the tests that they took, determine which student has the best Test Average. The key will be the student's name and the value will be an array of their grades. You will only have to return the student's name. You do not need to return their Test Average.
 // getBestStudent([{ name: ‘John’, grades: [100, 90, 80]}, {name: ‘Bob’, grades: [100, 70, 80]}…]) ➞ "John" // John's avg = 90 // Bob's avg = 83.33
 function average(arr) {
   var sum = 0;
   for (let i = 0; i < arr.length; i++) {
-      sum += arr[i];
+    sum += arr[i];
   }
-  return (sum / arr.length);
+  return sum / arr.length;
 }
 
 function theBestStudent(student) {
   var averageGrade = 0;
   var bestStudent = student[0].name;
   for (let i = 0; i < student.length; i++) {
-      var x = average(student[i].grades);
-      if (x > averageGrade) {
-          averageGrade = x;
-          bestStudent = student[i].name;
-      }
+    var x = average(student[i].grades);
+    if (x > averageGrade) {
+      averageGrade = x;
+      bestStudent = student[i].name;
+    }
   }
   return bestStudent;
 }
 
-var students = [{ name: "John", grades: [100, 90, 80] }, { name: "Bob", grades: [100, 70, 80] }];
+var students = [
+  { name: "John", grades: [100, 90, 80] },
+  { name: "Bob", grades: [100, 70, 80] },
+];
 
 console.log("The best student is:", theBestStudent(students));
 
+// function getBestStudent(students) {
+//   let bestStudent = students[0].name;
+
+//   let highestAvg =
+//     students[0].grades.reduce((sum, grade) => sum + grade) /
+//     students[0].grades.length;
+
+//   for (let i = 1; i < students.length; i++) {
+    // Calculate the average grade for the current student
+//     let avg =
+//       students[i].grades.reduce((sum, grade) => sum + grade) /
+//       students[i].grades.length;
+
+//     if (avg > highestAvg) {
+//       bestStudent = students[i].name;
+//       highestAvg = avg;
+//     }
+//   }
+
+//   return bestStudent;
+// }
+
+// var students = [
+//   { name: "John", grades: [100, 90, 80] },
+//   { name: "Bob", grades: [100, 70, 80] },
+// ];
+
+// console.log(getBestStudent(students));
+
+//-----------------------------------------------------
+
+// const getBestStudent = function (students) {
+//   const studentsWithAvg = [];
+//   const sum = [];
+//   const avg = [];
+
+//   for (let i = 0; i < students.length; i++) {
+//     // predefine sum at index with 0
+//     sum[i] = 0;
+
+//     for (let j = 0; j < students[i].grades.length; j++) {
+//       sum[i] += students[i].grades[j];
+//     }
+
+//     avg[i] = sum[i] / students[i].grades.length;
+
+//     studentsWithAvg[i] = {
+//       name: students[i].name,
+//       avgTest: Math.round(avg[i] * 100) / 100,
+//     };
+//   }
+
+//   let highestAvg = studentsWithAvg[0].avgTest;
+//   let highestName = studentsWithAvg[0].name;
+
+//   for (let k = 0; k < studentsWithAvg.length; k++) {
+//     if (studentsWithAvg[k].avgTest > highestAvg) {
+//       highestName = studentsWithAvg[k].name;
+//     }
+//   }
+
+//   return `And the best student is: ${highestName}!`;
+// };
 
 
-
-
-
-
+// console.log(
+//   getBestStudent([
+//     { name: "John", grades: [100, 90, 80] },
+//     { name: "Bob", grades: [100, 70, 80] },
+//   ])
+// );
