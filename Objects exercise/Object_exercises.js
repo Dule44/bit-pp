@@ -12,13 +12,13 @@ console.log(coffee);
 
 //2.Create an object that represents your favourite movie. Please include title, actors, director, genre, popularity.
 var movie = {
-    title: "Indian Jones",
-    actors: ["Harrison Ford", "Karen Allen", "Sean Connery"],
-    director: "Steven Spielberg",
-    genre: [ "Action", "Adventure"],
+    title: "Ghost",
+    actors: ["Patrick Wayne Swayze","Demi Moore","Whoopi Goldberg"],
+    director: "Jerry Zucker",
+    genre: [ "Drama", "Fantasy","Romance"],
     popularity: {
-        imdb: 8.6,
-        rotten: "93%",
+        imdb: 7.6,
+        rate: "73%",
     }
 }
 
