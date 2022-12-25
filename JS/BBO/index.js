@@ -72,7 +72,7 @@ function printUrl() {
   console.log("Full URL adress " + window.location.href);
   console.log("Domain name " + window.location.hostname);
   console.log("Protocol " + window.location.protocol);
-  console.log("parametri " + window.location.search);
+  console.log("Parameter " + window.location.search);
 }
 
 printUrl();
