@@ -1,8 +1,8 @@
 .field{
     background-image: url(./img/field.png);
 
-   width:800px;
-   height: 500px;
+    width:800px;
+    height: 500px;
     background-repeat: no-repeat;
     background-color: rgb(80, 150, 255);
     background-size: cover;
