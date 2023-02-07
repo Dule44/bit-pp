@@ -31,6 +31,7 @@ function createMovie() {
 
 var createButton = document.getElementsByClassName('create-button');
 createButton.addEventListener('click', createMovie);
+
 function getFullDuration(movies) {
   if (!movies.length) return 0;
   var count = 0;
