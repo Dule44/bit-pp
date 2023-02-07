@@ -8,9 +8,9 @@ var collectData = function () {
   var [studentName, ...studentSurnameArr] = student;
   var studentSurname = studentSurnameArr.join(" ");
 
-  var pupil = new Student(studentName, studentSurname);
+  var people = new Student(studentName, studentSurname);
   var subject = new Subject(document.getElementById("subject").value);
-  var exam = new Exam(subject, pupil, document.getElementById("grade").value);
+  var exam = new Exam(subject, people, document.getElementById("grade").value);
 
   return exam;
 };
