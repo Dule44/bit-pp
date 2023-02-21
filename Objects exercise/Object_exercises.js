@@ -30,7 +30,7 @@ console.log(movie);
 
 function project(des, lan, repository, stat) {
     var obj = {
-      description: des,
+      description : des,
       language: lan,
       git: repository,
       status: stat,
